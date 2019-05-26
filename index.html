@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+
+<div class="form1">
+    <h4>Потреба матеріалів на утеплення стіни (100 м2)</h4>
+    <table class="table border" border="1">
+        <thead>
+        <tr>
+            <th scope="col" width="5">№</th>
+            <th scope="col" width="25%">Найменування матеріалу</th>
+            <th scope="col">Розхід на 1м<sup>2</sup></th>
+            <th scope="col">Потреба на 100м<sup>2</sup></th>
+            <th scope="col" width="19%">Ціна продукту (грн.)</th>
+            <th scope="col" width="18%">Сума витрат (грн.)</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>1</td>
+            <td>Грунт глибокого проникнення (10 л)</td>
+            <td>0,15 кг</td>
+            <td>2</td>
+            <td><input id="grunt" type="text" autocomplete="off" placeholder="Введіть ціну" onkeyup="getSum(2,'grunt', 'gruntSum');"> </td>
+            <td><input id="gruntSum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Утеплювач ↓</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="2"></td>
+            <td>плита  ПСБ-С-25 100мм (100х50) </td>
+            <td>2 шт</td>
+            <td>200</td>
+            <td><input id="ytepPSB" type="text" autocomplete="off" placeholder="Введіть ціну" onkeyup="getSum(200,'ytepPSB', 'ytepPSBSum');"></td>
+            <td><input id="ytepPSBSum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>плита базальтова 100 мм (1200х600)</td>
+            <td>1,4 шт</td>
+            <td>140</td>
+            <td><input id="ytepMV" type="text" autocomplete="off" placeholder="або Введіть ціну" onkeyup="getSum(140,'ytepMV', 'ytepMVSum');"></td>
+            <td><input id="ytepMVSum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Клейова суміш (25 кг) ↓</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="2"></td>
+            <td>для ПСБ </td>
+            <td>6 кг</td>
+            <td>17</td>
+            <td><input id="kleyPSB" type="text" autocomplete="off" placeholder="Введіть ціну" onkeyup="getSum(17,'kleyPSB', 'kleyPSBSum');"></td>
+            <td><input id="kleyPSBSum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>для мінеральної вати</td>
+            <td>6 кг</td>
+            <td>17</td>
+            <td><input id="kleyMV" type="text" autocomplete="off" placeholder="або Введіть ціну" onkeyup="getSum(17,'kleyMV', 'kleyMVSum');"></td>
+            <td><input id="kleyMVSum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Дюбель 10*180 з металевим стержнем</td>
+            <td>7 шт</td>
+            <td>700</td>
+            <td><input id="dubel" type="text" autocomplete="off" placeholder="Введіть ціну" onkeyup="getSum(700,'dubel', 'dubelSum');"></td>
+            <td><input id="dubelSum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Сітка лугостійка 160 гр/м2 (рулон 50 м2)</td>
+            <td>1,1 м</td>
+            <td>2</td>
+            <td><input id="sitka" type="text" autocomplete="off" placeholder="Введіть ціну" onkeyup="getSum(2,'sitka', 'sitkaSum');"></td>
+            <td><input id="sitkaSum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Кутник пластиковий, з сіткою, 3м</td>
+            <td></td>
+            <td>20</td>
+            <td><input id="kutnyk" type="text" autocomplete="off" placeholder="Введіть ціну" onkeyup="getSum(20,'kutnyk', 'kutnykSum');"></td>
+            <td><input id="kutnykSum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Клей/суміш для армування основи (25 кг) ↓</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="2"></td>
+            <td>для ПСБ</td>
+            <td>6 кг</td>
+            <td>17</td>
+            <td><input id="kleyArmPSB" type="text" autocomplete="off" placeholder="Введіть ціну" onkeyup="getSum(17,'kleyArmPSB', 'kleyArmPSBSum');"></td>
+            <td><input id="kleyArmPSBSum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>для мінеральної вати</td>
+            <td>6 кг</td>
+            <td>17</td>
+            <td><input id="kleyArmMV" type="text" autocomplete="off" placeholder="або Введіть ціну" onkeyup="getSum(17,'kleyArmMV', 'kleyArmMVSum');"></td>
+            <td><input id="kleyArmMVSum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Грунт з кварцевим піском, 10 кг</td>
+            <td>0,3 кг</td>
+            <td>3</td>
+            <td><input id="gruntKvarc" type="text" autocomplete="off" placeholder="Введіть ціну" onkeyup="getSum(3,'gruntKvarc', 'gruntKvarcSum');"></td>
+            <td><input id="gruntKvarcSum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Декоративна штукатурка, 1,5 мм, баранець ↓</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="2"></td>
+            <td>акрилова (для ПСБ), 25 кг, відро</td>
+            <td>3 кг</td>
+            <td>12</td>
+            <td><input id="decorPSB" type="text" autocomplete="off" placeholder="Введіть ціну" onkeyup="getSum(12,'decorPSB', 'decorPSBSum');"></td>
+            <td><input id="decorPSBSum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>силіконова (для мінвати) 25 кг, відро</td>
+            <td>3 кг</td>
+            <td>12</td>
+            <td><input id="decorMV" type="text" autocomplete="off" placeholder="або Введіть ціну" onkeyup="getSum(12,'decorMV', 'decorMVSum');"></td>
+            <td><input id="decorMVSum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <th colspan="5">Загальна сума витрат:</th>
+            <td><input id="totalSum1" type="text" readonly ></td>
+        </tr>
+    </table>
+</div >
+<br>
+
+<div class="form2">
+    <h4>Потреба матеріалів на утеплення відкосів(50 метрів погонних)</h4>
+    <table class="table border" border="1">
+        <thead>
+        <tr>
+            <th scope="col" width="5">№</th>
+            <th scope="col" width="25%">Найменування матеріалу</th>
+            <th scope="col">Розхід на 1м<sup>2</sup></th>
+            <th scope="col">Потреба на 100м<sup>2</sup></th>
+            <th scope="col" width="19%">Ціна продукту (грн.)</th>
+            <th scope="col" width="18%">Сума витрат (грн.)</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>1</td>
+            <td>Грунт глибокого проникнення (10 л)</td>
+            <td>0,15 кг</td>
+            <td>1</td>
+            <td><input id="gruntT2" type="text" autocomplete="off" placeholder="Введіть ціну" onkeyup="getSum(1,'gruntT2', 'gruntT2Sum');"></td>
+            <td><input id="gruntT2Sum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Утеплювач ↓</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>плита ПСБ-С 35 2 см (100х50)</td>
+            <td>2 шт</td>
+            <td>20</td>
+            <td><input id="ytepPSBT2" type="text" autocomplete="off" placeholder="Введіть ціну" onkeyup="getSum(20,'ytepPSBT2', 'ytepPSBT2Sum');"></td>
+            <td><input id="ytepPSBT2Sum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Клейова суміш (25 кг) ↓</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>для ПСБ </td>
+            <td>6 кг</td>
+            <td>2</td>
+            <td><input id="kleyPSBT2" type="text" autocomplete="off" placeholder="Введіть ціну" onkeyup="getSum(2,'kleyPSBT2', 'kleyPSBT2Sum');"></td>
+            <td><input id="kleyPSBT2Sum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Сітка лугостійка 160 гр/м2 (рулон 50 м2)</td>
+            <td>1,1 м</td>
+            <td>1</td>
+            <td><input id="sitkaT2" type="text" autocomplete="off" placeholder="Введіть ціну" onkeyup="getSum(1,'sitkaT2', 'sitkaT2Sum');"></td>
+            <td><input id="sitkaT2Sum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Кутник пластиковий, з сіткою, 3м</td>
+            <td></td>
+            <td>20</td>
+            <td><input id="kutnykT2" type="text" autocomplete="off" placeholder="Введіть ціну" onkeyup="getSum(20,'kutnykT2', 'kutnykT2Sum');"></td>
+            <td><input id="kutnykT2Sum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Профіль примикання пластиковий(2,4м)</td>
+            <td></td>
+            <td>17</td>
+            <td><input id="profileT2" type="text" autocomplete="off" placeholder="Введіть ціну" onkeyup="getSum(17,'profileT2', 'profileT2Sum');"></td>
+            <td><input id="profileT2Sum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Клей/суміш для армування основи (25 кг)</td>
+            <td>6 кг</td>
+            <td>2</td>
+            <td><input id="kleyArmPSBT2" type="text" autocomplete="off" placeholder="Введіть ціну" onkeyup="getSum(2,'kleyArmPSBT2', 'kleyArmPSBT2Sum');"></td>
+            <td><input id="kleyArmPSBT2Sum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Грунт з кварцевим піском, 10 кг</td>
+            <td>0,3 кг</td>
+            <td>1</td>
+            <td><input id="gruntKvarcT2" type="text" autocomplete="off" placeholder="Введіть ціну" onkeyup="getSum(1,'gruntKvarcT2', 'gruntKvarcSumT2');"></td>
+            <td><input id="gruntKvarcSumT2" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Декоративна штукатурка, 1,5 мм, баранець  ↓</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="2"></td>
+            <td>акрилова (для ПСБ), 25 кг, відро</td>
+            <td>3 кг</td>
+            <td>1</td>
+            <td><input id="decorPSBT2" type="text" autocomplete="off" placeholder="Введіть ціну" onkeyup="getSum(1,'decorPSBT2', 'decorPSBT2Sum');"></td>
+            <td><input id="decorPSBT2Sum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>силіконова (для мінвати) 25 кг, відро</td>
+            <td>3 кг</td>
+            <td>1</td>
+            <td><input id="decorMVT2" type="text" autocomplete="off" placeholder="або Введіть ціну" onkeyup="getSum(1,'decorMVT2', 'decorMVT2Sum');"></td>
+            <td><input id="decorMVT2Sum" type="text" readonly></td>
+        </tr>
+        <tr>
+            <th colspan="5">Загальна сума витрат:</th>
+            <td><input id="totalSum2" type="text" readonly></td>
+        </tr>
+    </table>
+</div >
+<br>
+
+<br>
+<div class="form3">
+    <h4>Загальні витрати на матеріали</h4>
+    <table class="table border" border="1">
+        <tr>
+            <th scope="col" width="5">№</th>
+            <th scope="col">Назва роботи</th>
+            <th scope="col" width="25%">Площа/Метрів погонних</th>
+            <th scope="col" width="25%">Сума (грн.)</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Площа утеплення стін будинку</td>
+            <td><input id="plosha" type="text" autocomplete="off" placeholder="Введіть площу" onkeydown="getZagSum1();"></td>
+            <td><input id="zagsum1" type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Відкоси вікон дверей</td>
+            <td><input id="metry" type="text" autocomplete="off" placeholder="Введіть метри" onkeydown="getZagSum2();"></td>
+            <td><input id="zagsum2" type="text" readonly></td>
+        </tr>
+
+    </table>
+
+</div>
+
+<br><br><br>
+<script src="script.js"></script>
+</body>
+</html>
+
+
